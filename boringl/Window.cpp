@@ -27,6 +27,7 @@ Window::~Window()
     if( 0 != m_windowID )
     {
         glutDestroyWindow( m_windowID );
+        m_windowID = 0;
     }
 }
 

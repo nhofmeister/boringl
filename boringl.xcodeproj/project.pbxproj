@@ -14,6 +14,7 @@
 		DA11967F19196D4C0049AA3C /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA11967E19196D4C0049AA3C /* GLUT.framework */; };
 		DA11968719196EF50049AA3C /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA11968519196EF50049AA3C /* Window.cpp */; };
 		DA11968E191973BA0049AA3C /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA11968C191973BA0049AA3C /* Renderer.cpp */; };
+		DAFED0FA191AB21600FBC91F /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAFED0F8191AB21600FBC91F /* Camera.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		DA11968619196EF50049AA3C /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		DA11968C191973BA0049AA3C /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
 		DA11968D191973BA0049AA3C /* Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
+		DAFED0F8191AB21600FBC91F /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		DAFED0F9191AB21600FBC91F /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 			children = (
 				DA11968C191973BA0049AA3C /* Renderer.cpp */,
 				DA11968D191973BA0049AA3C /* Renderer.h */,
+				DAFED0F8191AB21600FBC91F /* Camera.cpp */,
+				DAFED0F9191AB21600FBC91F /* Camera.h */,
 			);
 			name = render;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFED0FA191AB21600FBC91F /* Camera.cpp in Sources */,
 				DA11968E191973BA0049AA3C /* Renderer.cpp in Sources */,
 				DA11967219196B6C0049AA3C /* main.cpp in Sources */,
 				DA11968719196EF50049AA3C /* Window.cpp in Sources */,
@@ -211,6 +217,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					glm,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -243,6 +254,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					glm,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
@@ -283,6 +299,7 @@
 				DA11967919196B6C0049AA3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
