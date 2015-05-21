@@ -16,6 +16,8 @@
 #include <GL/glu.h>
 #endif
 
+#include "Camera.h"
+
 static GLfloat whiteLight[3] = {1.0f, 1.0f, 1.0f};
 static GLfloat greenLight[3] = {0.0f, 1.0f, 0.0f};
 static GLfloat lightPosition[4] = {0.0f, 0.0f, 0.0f, 1.0f};
@@ -27,10 +29,19 @@ static int wrapS = GL_REPEAT;
 static int wrapT = GL_REPEAT;
 static int envMode = GL_MODULATE;
 
+static Renderer* CURRENT_INSTANCE = NULL;
 
-Renderer::Renderer()
+static void drawCallback()
+{
+    assert( NULL != CURRENT_INSTANCE );
+    CURRENT_INSTANCE->draw();
+}
+
+
+Renderer::Renderer( Camera& cam )
     : m_textureHeight(256)
     , m_textureWidth(256)
+    , m_camera( cam )
 {
     init();
 }
@@ -41,8 +52,10 @@ Renderer::~Renderer()
 
 void Renderer::init()
 {
-    glutDisplayFunc(Renderer::draw);
-    glutIdleFunc(Renderer::idle);
+    CURRENT_INSTANCE = this;
+    
+    glutDisplayFunc( drawCallback );
+    glutIdleFunc( idle );
     
     glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -91,6 +104,8 @@ void Renderer::idle()
 void Renderer::draw()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    m_camera.Update();
     
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();

@@ -14,8 +14,8 @@ int main (int argc, char **argv)
 	glutInit(&argc, argv);
     
     Window window;
-    Renderer renderer;
     Camera camera;
+    Renderer renderer(camera);
 	
 	glutMainLoop();
 	

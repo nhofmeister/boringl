@@ -31,6 +31,10 @@ Camera::Camera() {
 	m_maxPitch = 5;
 	m_maxHeading = 5;
 	m_moveCam = false;
+    m_cameraMode = FREE;
+    m_aspectRatio = .6f;
+    m_nearClip = .1f;
+    m_farClip = 100.0f;
 }
 
 Camera::~Camera() {

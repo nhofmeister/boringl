@@ -15,20 +15,25 @@
 #include <GL/gl.h>
 #endif
 
+class Camera;
+
 class Renderer
 {
 public:
-    Renderer();
+    Renderer( Camera& cam );
     virtual ~Renderer();
+    
+    void draw();
     
 private:
     void init();
     
     static void idle();
-    static void draw();
     
     const int m_textureHeight;
     const int m_textureWidth;
+    
+    Camera& m_camera;
 };
 
 #endif /* defined(__boringl__Renderer__) */
